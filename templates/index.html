@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset = "utf-8">
+    <title>Restaurant Reviews</title>
+	  <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='Main_Page.css') }}">
+	  <hr>
+</head>
+
+<body>
+  <header>
+    <ul>
+    <!-- <li style="float:right"><img src = 'images/logo.png' height = "50" width = "65"/></li> -->
+      <li style="float:left"><a href = "Main_Page.html">Resturants in Mississauga</a></li>
+      <li><a href=#>Log in</a></li>
+      <li><a href="Data_Page.html">About Data</a></li>
+      <li><a href="Sample_Query.html">Sample Results</a></li>
+    </ul>
+ </header>
+</body>
+
+
+<section>
+	<div>
+    </br>
+    </br>
+    </br>
+    <h1>Restaurant Reviews </h1>
+		<hr>
+    <section>
+      <p class="opening">
+        Find your next favorite restaurant in Mississauga!
+        This site helps consumers, restaurant owners, and critics choose satisfying
+        restaurants and understand the trends of Yelp reviews of restaurants in Mississauga
+        in a easy and straight-forward manner.
+      </p>
+      <img src="{{ url_for('static', filename='logo.jpg') }}" alt="A logo of RR" height = "150" width = "200" ; class="opening">
+    </section>
+
+  </br>
+
+		<input type = 'text' placeholder = 'Search for your favorite restaurant' id = 'searchBox' />
+		<div id = 'magnifyingGlass'>
+    <img src = "{{ url_for('static', filename='magnifyingGlass.jpg') }}" />
+    
+    <form action="/results" method="post">
+      <input type="text" name="query"></input>
+      <input type="submit" value="Search"></input>
+      <label for="stars">Minimum stars (between 0 and 5):</label>
+      <input type="range" id="stars" name="stars" min="0" max="5">
+    </form>
+
+	</div>
+</section>
+
+</br>
+</br>
+</br>
+<section>
+
+
+	<p class = "mapBox">
+	<img src = "images/yea.png">
+	</p>
+  </section>
+
+
+  <!-- <h3>Filter</h3>
+  <input type = "checkbox" style = "float: left; float: inline-grid;">Type 1 </input>
+  <input type = "checkbox">Type 2 </input>
+  <input type = "checkbox">Type 3 </input> -->
+<!-- <input type = "datetime-local" style = "float: left; float: inline-grid;">Open/Close Time </input>
+<input type = "file" ></input>
+<input type = "range" style = "float: left; float: inline-grid;"> Rating </input> -->
+
+
+
+<body id = "top">
+  ...
+  <a href = "#top">Back to top</a>
+  ...
+</body>
+
+</br>
+</br>
+</br>
+</br>
+
+<footer>
+    <small>&copy; Copyrighted by Dean, Hashir and Tony</small>
+</footer>
+
+
+</html>

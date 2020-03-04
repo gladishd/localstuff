@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+​
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About Yelp Data</title>
+    <link rel="stylesheet" href="Data_Page.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+  </head>
+  <body>
+    <header>
+      <ul>
+      <!-- <li style="float:right"><img src = 'images/logo.png' height = "50" width = "65"/></li> -->
+        <li style="float:left"><a href = "Main_Page.html">Restaurants in Mississauga</a></li>
+        <li><a href=#>Advanced Search</a></li>
+        <li><a href="Data_Page.html">About Data</a></li>
+        <li><a href="Sample_Query.html">Sample Results</a></li>
+      </ul>
+   </header>
+​
+    <section>
+      <div class="data-summary">
+        <h1 class="heading1">Summary of Dataset</h1>
+        <hr>
+        <h2 class="heading2">The source of Data</h2>
+        <p>We use the dataset from <a href="https://www.yelp.com/dataset/download" target="_blank">Yelp</a>.  This dataset is a subset of their businesses, reviews and user data for use in personal, educational and academic purposes, containing over 1.2 million business attributes like hours, parking, availability and ambience.  Before combining, our original dataset was comprised of the following 6 JSON files:
+          <b>business.json</b>
+          <br>   - business_id, name, address, city, state, postal code, latitude, longitude, stars, review count, is open, attributes, categories and hours
+          <br>
+          <b>review.json</b>
+          <br>   - review id, user id, business id, stars, date, text, useful, funny, cool
+          <br>
+          <b>user.json</b>
+          <br>   - user id, name, review count, yelping since, friends, useful, funny, cool, fans, elite, average stars, compliments
+          <br>
+          <b>checkin.json</b>
+          <br>   - business id, date
+          <br>
+          <b>tip.json</b>
+          <br>   - text, date, compliment count, business id, user id
+          <br>
+          <b>photo.json</b>
+          <br>   - photo id, business id, caption, label
+        </p>
+
+    		<h2>Terms of Service, Purpose and Changes</h2>
+    		<p>We are bound by the Data Agreement if we wish to access or use the Data, which is made available with the expectation that we use it to develop an academic project as part of an ongoing course of study.  That is, we are allowed to access the data locally for this academic project, which fulfills the requirement of being part of an ongoing course of study; Yelp reserves the right to review our usage of the data and furthermore reserves the right to make any changes to the Agreement, and if we wish not to be bound by such terms we must immediately ceas use of the data and delete all local copies.
+    		Full terms of
+              use is on <a href=https://s3-media4.fl.yelpcdn.com/assets/srv0/engineering_pages/33c9cfe1cf95/assets/vendor/yelp-dataset-agreement.pdf target="_blank">here</a>.
+    		</p>
+
+        <h2>Licensing</h2>
+        <p>
+		        Yelp grants us a royalty-free, non-exclusive, revocable, non-sublicensable, non-transferable, fully paid-up right and license during the Term to use the Data electronically for academic purposes only, unless with Yelp's prior written consent.
+		    </p>
+
+        <h2>Limitation of the data</h2>
+        <p>We cannot use our data for:
+        <br>   - promoting our business listing
+        <br>   - any commercial purpose
+        <br>   - disclosing our analysis to third parties not covered under the Agreement
+        <br>   - using the data in such a manner that can be reasonably interpreted to suggest that Yelp is the author
+        <br>   - infringing any Yelp intellectual property or reputation
+        <br>   - using the Data for any purpose prohibited by law. </p>
+        <p>We only have the data for 10 cities. This data also does not include closed restaurants.</p>
+        <h2>Modifications we made on the data</h2>
+        <p> We will not do any modification on the data set. We will only use the information of the restaurants in Mississauga about the name, address, latitude, longitude, stars, and reviews to build up
+        our site.  We also deleted businesses that were closed.</p>
+      </div>
+    </section>
+​
+    <section>
+      <div class="data-summary">
+        <h1 class="heading1">Metadata</h1>
+        <table align="center">
+          <tr>
+            <th><b>Column Name</b></th>
+            <th><b>Column Description</b></th>
+          </tr>
+
+          <tr>
+            <td>business_id </td>
+            <td>&#160; &#160; &#160; &#160; &#160; &#160; unique values for business</td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>&#160; &#160; &#160; &#160; &#160; &#160; name of the specific Business</td>
+          </tr>
+          <tr>
+            <td>address</td>
+            <td>&#160; &#160; &#160; &#160; &#160; &#160; the place where the business located</td>
+          </tr>
+          <tr>
+            <td>city</td>
+            <td>&#160; &#160; &#160; &#160; &#160; &#160; the city where the business located</td>
+          </tr>
+          <tr>
+            <td>postal_code</td>
+            <td>&#160; &#160; &#160; &#160; &#160; &#160; postal code of the place</td>
+          </tr>
+          <tr>
+            <td>categories</td>
+            <td>&#160; &#160; &#160; &#160; &#160; &#160; the type of the business</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+​</body>
+
+  <body id = "top">
+    ...
+    <a href = "#top">Back to top</a>
+    ...
+  </body>
+
+  <hr>
+​
+  <footer>
+    <small>&copy; Copyrighted by Dean, Hashir and Tony</small>
+  </footer>
+​
+</html>

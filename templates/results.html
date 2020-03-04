@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset = "utf-8">
+    <title>Restaurant Reviews - Sample Search</title>
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='Sample_Query.css') }}">
+    <hr>
+</head>
+
+<body>
+  <header>
+    <ul>
+    <!-- <li style="float:right"><img src = 'images/logo.png' height = "50" width = "65"/></li> -->
+      <li style="float:left"><a href = "Main_Page.html">Resturants in Mississauga</a></li>
+      <li><a href=#>Log in</a></li>
+      <li><a href="Data_Page.html">About Data</a></li>
+      <li><a href="Sample_Query.html">Sample Results</a></li>
+    </ul>
+ </header>
+</body>
+
+
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+
+
+<div class = "content">
+
+  <h1>Restaurant Reviews </h1>
+	<hr>
+
+	</br>
+	</br>
+	</br>
+  <form action="/results" method="post">
+    <input type="text" name="query"></input>
+    <input type="submit" value="Search"></input>
+
+    <label for="stars">Minimum stars (between 0 and 5):</label>
+    <input type="range" id="stars" name="stars" min="0" max="5">
+  </form>
+</div>
+
+</br>
+</br>
+
+
+<section>
+
+  <h3>Filters</h3>
+  <input type = "range" style = "float: left; float: inline-grid;"> Rating </input>
+  </br>
+  Your search retrieved 23000 results.
+  <hr>
+
+  {% block content %}
+    {% for restaurant in restaurants %}
+
+    <div class = "queryBox">
+      <h4>{{ restaurant.name }}</h4>
+      </br>
+      </br>
+      </br>
+      </br>
+      <b>{{restaurant.stars }}/5 stars.</b>
+      </br>
+      
+      <i>{{ restaurant.topReviews[:1][:50] }}</i>
+  
+      </br>
+  
+      <b>Address:</b> {{ restaurant.address }}
+      </br>
+      <b>Hours:</b> {{ restaurant.getHours() }}
+    </div>
+
+    {% endfor %}
+  </br>
+  </br>
+  </br>
+  {% endblock %}
+
+<hr>
+</br>
+
+
+<body id = "top">
+  ...
+  <a href = "#top">Back to top</a>
+  ...
+</body>
+
+<hr>
+
+<footer>
+  <small>&copy; Copyrighted by Dean, Hashir and Tony</small>
+</footer>
+
+</html>
