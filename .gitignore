@@ -1,0 +1,4 @@
+*.pyc
+*.pyo
+.vscode/settings.json
+.DS_Store

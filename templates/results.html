@@ -3,7 +3,7 @@
 <head>
     <meta charset = "utf-8">
     <title>Restaurant Reviews - Sample Search</title>
-    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='Sample_Query.css') }}">
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='Advanced_Search.css') }}">
     <hr>
 </head>
 
@@ -11,80 +11,77 @@
   <header>
     <ul>
     <!-- <li style="float:right"><img src = 'images/logo.png' height = "50" width = "65"/></li> -->
-      <li style="float:left"><a href = "Main_Page.html">Resturants in Mississauga</a></li>
-      <li><a href=#>Log in</a></li>
-      <li><a href="Data_Page.html">About Data</a></li>
-      <li><a href="Sample_Query.html">Sample Results</a></li>
+    <li style="float:left"><a href = "{{ url_for('home') }}">Restaurants in Mississauga</a></li>
+    <li><a href="{{ url_for('advanced_search') }}">Advanced Search</a></li>
+    <li><a href="{{ url_for('data_page') }}">About Data</a></li>
     </ul>
  </header>
 </body>
-
-
-  </br>
-  </br>
-  </br>
-  </br>
-  </br>
-
 
 <div class = "content">
 
   <h1>Restaurant Reviews </h1>
 	<hr>
-
-	</br>
-	</br>
-	</br>
   <form action="/results" method="post">
     <input type="text" name="query"></input>
     <input type="submit" value="Search"></input>
-
-    <label for="stars">Minimum stars (between 0 and 5):</label>
-    <input type="range" id="stars" name="stars" min="0" max="5">
+    <label for="search">Please search for a restaurant name (eg: noodles, burger, or pizza, leave empty to return all)</label>
+    </br>
+    <!-- <label for="stars">Minimum stars (slide it between 0 and 5):</label>
+    <input type="range" id="stars" name="stars" min="0" max="5"> -->
+    <label for="stars">Minimum star rating:</label>
+    <select id="stars" name="stars">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3" selected>3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <!-- <input type="submit"> -->
   </form>
-</div>
-
-</br>
-</br>
-
-
-<section>
-
-  <h3>Filters</h3>
-  <input type = "range" style = "float: left; float: inline-grid;"> Rating </input>
-  </br>
-  Your search retrieved 23000 results.
-  <hr>
-
   {% block content %}
     {% for restaurant in restaurants %}
 
     <div class = "queryBox">
       <h4>{{ restaurant.name }}</h4>
-      </br>
-      </br>
-      </br>
-      </br>
-      <b>{{restaurant.stars }}/5 stars.</b>
-      </br>
-      
-      <i>{{ restaurant.topReviews[:1][:50] }}</i>
-  
-      </br>
-  
-      <b>Address:</b> {{ restaurant.address }}
-      </br>
-      <b>Hours:</b> {{ restaurant.getHours() }}
+      <section>
+        <p>
+        <b>{{ restaurant.stars }}/5.0 stars.</b>
+        </br>
+        <b>Address:</b> {{ restaurant.address }}
+        </br>
+        <b>Average rating of nearby restaurants:</b> {{ restaurant.averageNearbyRating }}
+        </br>
+        <b>Today's Hours:</b> {{ restaurant.getHours() }}
+        </br>
+        <b>Number of reviews:</b> {{ restaurant.numberOfReviews }}
+        </br>
+        <b>Top Review:</b>
+        <i><p class="showmore"> {{ restaurant.topReviews[:1][0][:400] }} <span class="dots">...</span><span class="more"> {{ restaurant.topReviews[:1][0][400:] }} </span><a>Show More</a></p></i>
+        </p>
+      </section>
     </div>
-
     {% endfor %}
+    {% if restaurants == [] %}
+      <b>No results.</b> Please try a different search query.
+    {% endif %}
   </br>
   </br>
   </br>
   {% endblock %}
+</div>
+
+
+
+  <!-- <h3>Filters</h3>
+  <input type = "range" style = "float: left; float: inline-grid;"> Rating </input>
+  <hr> -->
+
+    <!-- add if statement to deal with failed search or no searches-->
+
 
 <hr>
-</br>
+
 
 
 <body id = "top">
@@ -98,5 +95,16 @@
 <footer>
   <small>&copy; Copyrighted by Dean, Hashir and Tony</small>
 </footer>
+
+</br>
+
+<script>
+  document.querySelectorAll(".showmore").forEach(function (p) {
+    p.querySelector("a").addEventListener("click", function () {
+      p.classList.toggle("show");
+      this.textContent = p.classList.contains("show") ? "Show Less" : "Show More";
+    });
+  });
+</script>
 
 </html>

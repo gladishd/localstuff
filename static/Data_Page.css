@@ -4,7 +4,7 @@ body{
 	font-family: 'Georgia', sans-serif;
 	background-color: lavender;
 	background-repeat: repeat;
-	background-image: url("images/Mississauga.jpg");
+	background-image: url("Mississauga.jpg");
 	background-size: 100% 100%;
 	background-attachment: fixed;
 }
@@ -82,14 +82,6 @@ h2 {
 div {
     display: block;
 }
-
-/* section p {
-	font-size:20px;
-	color:black;
-	padding-right:2px;
-	font-family: "Times New Roman", Times, serif;
-	text-align: left;
-} */
 
 footer {
 	 position: fixed;

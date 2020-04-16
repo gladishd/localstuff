@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset = "utf-8">
+    <title>Restaurant Reviews - Sample Search</title>
+    <link rel = "stylesheet" type = "text/css" href ="{{ url_for('static', filename='Advanced_Search.css') }}">
+    <hr>
+</head>
+
+<body>
+  <header>
+    <ul>
+    <!-- <li style="float:right"><img src = 'images/logo.png' height = "50" width = "65"/></li> -->
+      <li style="float:left"><a href = "{{ url_for('home') }}">Restaurants in Mississauga</a></li>
+      <li><a href="{{ url_for('advanced_search') }}">Advanced Search</a></li>
+      <li><a href="{{ url_for('data_page') }}">About Data</a></li>
+    </ul>
+ </header>
+</body>
+
+
+<div class="content">
+  <h1> Search for a Restaurant </h1>
+  <form action="/results" method="post">
+    <input type="text" name="query"></input>
+    <input type="submit" value="Search"></input>
+    <label for="search">Please search for a restaurant name (eg: noodles, burger, or pizza, leave empty to return all)</label>
+    </br>
+    <!-- <label for="stars">Minimum stars (slide it between 0 and 5):</label>
+    <input type="range" id="stars" name="stars" min="0" max="5"> -->
+    <label for="stars">Minimum star rating:</label>
+    <select id="stars" name="stars">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3" selected>3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <!-- <input type="submit"> -->
+  </form>
+</div>
+
+
+
+
+
+<footer>
+  <small>&copy; Copyrighted by Dean, Hashir and Tony</small>
+</footer>
+
+</html>

@@ -10,11 +10,9 @@
 <body>
   <header>
     <ul>
-    <!-- <li style="float:right"><img src = 'images/logo.png' height = "50" width = "65"/></li> -->
-      <li style="float:left"><a href = "{{ url_for('Main_Page.html') }}">Resturants in Mississauga</a></li>
-      <li><a href=#>Advanced Search</a></li>
-      <li><a href="{{ url_for('Data_Page.html') }}">About Data</a></li>
-      <li><a href="{{ url_for('Sample_Query.html') }}">Sample Results</a></li>
+        <li style="float:left"><a href = "{{ url_for('home') }}">Restaurants in Mississauga</a></li>
+        <li><a href="{{ url_for('advanced_search') }}">Advanced Search</a></li>
+        <li><a href="{{ url_for('data_page') }}">About Data</a></li>
     </ul>
  </header>
 
@@ -24,64 +22,71 @@
       <hr>
       <section>
           <p class="opening">
-            Here you can get all you need to know about Resturants in Mississauga.
+            Here you find out all you need to know about Restaurants in Mississauga!
           </br>
           </br>
-            Gaining valuable insights into the performance of Yelp restaurants across Mississauga,
-            This site allows consumers, restaurant owners and food critic to choose a satisfying
-            restaurant and better understand the critical trends of Yelp restaurant market in Mississauga
+            Gain valuable insights into the performance of restaurants across Mississauga!
+            This site allows consumers, restaurant owners, and food critic to choose or learn more about a
+            restaurant understand the critical trends of Yelp reviewers in the city
             in a easy and straight-forward manner.
           </p>
           <img src="{{ url_for('static', filename='yelp.png') }}"
            alt="A logo of RR" height = "130" width = "256">
       </section>
 
+      <h2>Start by searching a restaurant in Mississauga</h2>
+      <form action="/results" method="post">
+        <input type="text" name="query"></input>
+        <input type="submit" value="Search"></input>
+        <label for="search">Please search for a restaurant name (eg: noodles, burger, or pizza, leave empty to return all)</label>
+        </br>
+        <!-- <label for="stars">Minimum stars (slide it between 0 and 5):</label>
+        <input type="range" id="stars" name="stars" min="0" max="5"> -->
+        <label for="stars">Minimum star rating:</label>
+        <select id="stars" name="stars">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <!-- <input type="submit"> -->
+      </form>
   	</div>
-
-
 
 
   <div id = "audiences">
     <div class = "audience">
       <h2>Consumer</h2>
         <p>
-          Knowing the available resturants in Mississauga
+          Knowing the available restaurants in Mississauga
         </p>
         <p>
-          Getting knowledge of specific features for a specific resturants
+          Getting information for specific restaurants
         </p>
     </div>
     <div class = "audience">
       <h2>Restaurant Owners</h2>
         <p>
-          Checking how people feel about his resturant
+          Checking how customors feel about their restaurant
         </p>
         <p>
           Comparing and contrasting among various neighborhoods
         </p>
         <p>
-          Knowing the working hours of the other resturants in certain neighborhood
+          Knowing the working hours of the other restaurants
         </p>
     </div>
     <div class = "audience">
       <h2>Food Critics/ Researchers</h2>
         <p>
-          Checking the top 5 reviews of the resturant
+          Reading the top reviews of a restaurant
         </p>
         <p>
-          Having an overall understanding of the variables in the data
+          Accessing the total number of reviews and average rating of restaurants in certain neighborhoods
         </p>
     </div>
   </div>
-
-<section>
-  <form action="/results" method="post">
-    <input type="text" name="query"></input>
-    <input type="submit" value="Search"></input>
-    <label for="stars">Minimum stars (between 0 and 5):</label>
-    <input type="range" id="stars" name="stars" min="0" max="5">
-  </form>
-</section>
 </body>
 
 

@@ -4,17 +4,15 @@
   <head>
     <meta charset="utf-8">
     <title>About Yelp Data</title>
-    <link rel="stylesheet" href="Data_Page.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Data_Page.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
   </head>
   <body>
     <header>
       <ul>
-      <!-- <li style="float:right"><img src = 'images/logo.png' height = "50" width = "65"/></li> -->
-        <li style="float:left"><a href = "Main_Page.html">Restaurants in Mississauga</a></li>
-        <li><a href=#>Advanced Search</a></li>
-        <li><a href="Data_Page.html">About Data</a></li>
-        <li><a href="Sample_Query.html">Sample Results</a></li>
+        <li style="float:left"><a href = "{{ url_for('home') }}">Restaurants in Mississauga</a></li>
+        <li><a href="{{ url_for('advanced_search') }}">Advanced Search</a></li>
+        <li><a href="{{ url_for('data_page') }}">About Data</a></li>
       </ul>
    </header>
 ​
@@ -64,8 +62,8 @@
         <br>   - using the Data for any purpose prohibited by law. </p>
         <p>We only have the data for 10 cities. This data also does not include closed restaurants.</p>
         <h2>Modifications we made on the data</h2>
-        <p> We will not do any modification on the data set. We will only use the information of the restaurants in Mississauga about the name, address, latitude, longitude, stars, and reviews to build up
-        our site.  We also deleted businesses that were closed.</p>
+        <p> We only used open restaurants located in Mississauga, Ontario due to database size restrictions. We will only use the information of the restaurants in Mississauga about the name, address, latitude, longitude, stars, and reviews to build up
+        our site.</p>
       </div>
     </section>
 ​

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset = "utf-8">
+    <title>Restaurant Reviews - Sample Search</title>
+    <link rel = "stylesheet" type = "text/css" href = "Sample_Query.css">
+    <hr>
+</head>
+
+<body>
+  <header>
+    <ul>
+    <!-- <li style="float:right"><img src = 'images/logo.png' height = "50" width = "65"/></li> -->
+      <li style="float:left"><a href = "Main_Page.html">Resturants in Mississauga</a></li>
+      <li><a href=#>Log in</a></li>
+      <li><a href="Data_Page.html">About Data</a></li>
+      <li><a href="Sample_Query.html">Sample Results</a></li>
+    </ul>
+ </header>
+</body>
+
+
+<div class = "content">
+
+  <h1>Search Results</h1>
+	<hr>
+  <div class = "queryBox">
+    <h4>Matt's Bar</h4>
+    <section>
+      <p></br>
+        </br>
+        </br>
+        </br>
+        4/5 stars.
+        </br>
+        </br>
+          “One of my favorite burger places in Minneapolis, and the (supposedly) creator of the Jucy Lucy.”
+        </br>
+        </br>
+          Address: 3500 Cedar Ave S, Minneapolis, MN 55407
+        </br>
+        </br>
+          Hours: Mon 11:00 am - 12:00 am
+      </p>
+    <img src="images/burger.jpg" alt="A juicy lucy.">
+    </section>
+  </div>
+
+  </br>
+
+  <div class = "queryBox">
+    <h4>5-8 Club</h4>
+    <section>
+      <p>
+        </br>
+        </br>
+        </br>
+        </br>
+        3.5/5 stars.
+        </br>
+        </br>
+          "Here's the deal. I used to hang out at Sports Page in the early 1980's. Why? Great cheeseburgers! Granted, they only served 3.2 beer back then, but who cares, it's the cheeseburgers that draw! I was on my way to MSP Airport last…"”
+        </br>
+        </br>
+          Address: 5800 Cedar Ave, Minneapolis, MN 55417
+        </br>
+        </br>
+          Hours: Mon 11:00 am - 10:00 pm
+      </p>
+    <img src="images/burger2.jpg" alt="Another juicy lucy.">
+    </section>
+  </div>
+
+
+	<!-- <input type = 'text' placeholder = 'Search for your favorite restaurant' id = 'searchBox' />
+	<div id = 'magnifyingGlass'>
+    <img src = 'images/magnifyingGlass.jpg' /> -->
+</div>
+  <!-- <h3>Filters</h3>
+  <input type = "datetime-local" style = "float: left; float: inline-grid;">Open/Close Time </input>
+  </br>
+  </br>
+  <input type = "range" style = "float: left; float: inline-grid;"> Rating </input>
+  </br>
+  Your search retrieved 23000 results.
+  <hr> -->
+
+
+  <section>
+    <form action="/results" method="post">
+      <input type="text" name="query"></input>
+      <input type="submit" value="Search"></input>
+      <label for="stars">Minimum stars (between 0 and 5):</label>
+      <input type="range" id="stars" name="stars" min="0" max="5">
+    </form>
+  </section>
+
+
+<body id = "top">
+  ...
+  <a href = "#top">Back to top</a>
+  ...
+</body>
+
+<hr>
+
+<footer>
+  <small>&copy; Copyrighted by Dean, Hashir and Tony</small>
+</footer>
+
+</html>
